@@ -1,0 +1,17 @@
+{
+  "name": "initial-go",
+  "version": "1.0.0",
+  "description": "First go at bitburner",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc",
+    "start": "tsc -w"
+  },
+  "author": "Ronald Jimmy Headrick III <rockbladej99@gmail.com>",
+  "license": "GPL-3.0-only",
+  "devDependencies": {
+    "@types/node": "^18.11.18",
+    "typescript": "^4.9.4"
+  }
+}
