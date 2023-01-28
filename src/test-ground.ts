@@ -1,30 +1,15 @@
 import { NS } from "./Bitburner"
-import ServerMap from "./ServerMap"
+import { serverList } from "./lib/constants"
+import { findBestTarget } from "./lib/server-utils"
 
 export async function main(ns: NS) {
-  // ns.tprint(HEADER_TEXT)
-  // ns.print(ns.getRunningScript())
+  ns.tprint(HEADER_TEXT)
 
-  // const player = JSON.stringify(ns.getPlayer())
-  // const res = ns.scan("n00dles")
-  const server = new ServerMap(ns)
-  await server.buildMap()
+  ns.tprint(`===============Useful Stats===============
+Best target: ${findBestTarget(ns, serverList)}`)
 
-  // ns.print(`Player: ${player}`)
-  // ns.print(res)
-
-  // ns.print("--------------------")
-
-  // ns.print(Object.keys(ns).join("\n"))
-
-  // ns.print("--------------------")
-
-  const serverString = JSON.stringify(
-    await server.findServer("n00dles"),
-    null,
-    2
-  )
-  ns.tprint(ns.getGrowTime("silver-helix"))
+  ns.tprint(`===============Server Stats===============`)
+  ns.tprint(JSON.stringify(ns.getServer("home"), null, 2))
 }
 
 const HEADER_TEXT = `
